@@ -1,0 +1,20 @@
+<html xmlns="hhtp://www.w3.org/1999/xhtml"
+      xmlns:th="hhtp://www.thymeleaf.org">
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 th:text="#{plantilla.titulo}">Titulo</h1>
+        </header>
+    </body>
+    <footer th:fragment="footer">
+        <div>
+            <br/>
+            <a th:href="@{/(lang=es)}">ES</a> |
+            <a th:href="@{/(lang=en)}">EN</a>
+        <span>[[#{plantilla.pie-pagina}]] <a href="www.eldars.com.ar" target="_blank">Eldars</a></span>
+        </div>
+    </footer>
+</html>
