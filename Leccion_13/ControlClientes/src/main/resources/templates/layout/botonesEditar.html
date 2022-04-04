@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="hhtp://www.w3.org/1999/xhtml" xmlns:th="hhtp://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/plantilla :: head">
+    <meta charset="UTF-8"/>
+    <title>Editar Botones</title>
+</head>
+<body>
+    <section th:fragment="botonesEditar">
+        <div id="actions" class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a th:href="@{/}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-success btn-lg" type="submit">
+                            <i class="fas fa-check"></i> [[#{accion.guardar}]]
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <a th:href="@{/eliminar(idPersona=${persona.idPersona})}" class="btn btn-danger btn-lg">
+                            <i class="fas fa-trash"></i> [[#{accion.eliminar}]]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="hhtp://www.w3.org/1999/xhtml" xmlns:th="hhtp://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Agregar Cliente</title>
+</head>
+<body>
+    <section th:fragment="agregarCliente">
+        <div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="agregarClienteLabel" th:text="#{accion.agregar}">Agregar Cliente</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form th:action="@{/guardar}" th:object="${persona}" method="POST" class="was-validated">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombre" th:text="#{persona.nombre}">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" required="true" placeholder="Inserte el nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido" th:text="#{persona.apellido}">Nombre</label>
+                                <input type="text" class="form-control" name="apellido" required="true" placeholder="Inserte el apellido">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" th:text="#{persona.email}">Nombre</label>
+                                <input type="email" class="form-control" name="email" required="true" placeholder="Inserte el email">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" th:text="#{persona.telefono}">Nombre</label>
+                                <input type="tel" class="form-control" name="telefono" required="true" placeholder="Inserte el telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="saldo" th:text="#{persona.saldo}">Nombre</label>
+                                <input type="number" class="form-control" name="saldo" required="true" placeholder="Inserte el saldo" step="any">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" th:text="#{accion.guardar}">Guardar</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
